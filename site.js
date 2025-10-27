@@ -25,19 +25,17 @@ const buttonsDiv = document.querySelector('#buttons')
         characterP.textContent = name
         buttonsDiv.innerHTML = ''
 
-        if(id>1) {
-            const previousButton = createButton(id - 1)
+        if(id > 1) {
+            const previousButton = await createButton(id - 1)
             buttonsDiv.append(previousButton)
         } 
 
-        const nextButton = createButton(id + 1)
+        const nextButton = await createButton(id + 1)
         buttonsDiv.append(nextButton)
         
 
     
-    }
-
-    
+    }    
 
     //show Luke Skywalker at the start
    await renderCharacter(await getCharacter(1))
